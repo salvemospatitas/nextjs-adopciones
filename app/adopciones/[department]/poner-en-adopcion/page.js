@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 import Header from '../../../../components/Header';
 
 const DEPARTMENTS = {
@@ -8,7 +9,8 @@ const DEPARTMENTS = {
   cusco: { name: 'Cusco', repo: 'patitas-pe/adopciones-cusco', contact: 'adopciones-cusco@gmail.com' }
 };
 
-export default function PonerEnAdopcionPage({ params }) {
+export default function PonerEnAdopcionPage() {
+  const params = useParams();
   const { department } = params;
   const dept = DEPARTMENTS[department] || DEPARTMENTS.lima;
 

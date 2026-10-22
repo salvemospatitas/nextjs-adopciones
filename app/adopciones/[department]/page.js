@@ -5,6 +5,7 @@ import LoadingSpinner from '../../../components/LoadingSpinner';
 import ErrorMessage from '../../../components/ErrorMessage';
 import Header from '../../../components/Header';
 import Link from 'next/link';
+import { useParams } from 'next/navigation';
 
 const DEPARTMENTS = {
     ayacucho: { name: 'Ayacucho', repo: 'patitas-pe/adopciones-ayacucho' },
@@ -12,7 +13,8 @@ const DEPARTMENTS = {
     cusco: { name: 'Cusco', repo: 'patitas-pe/adopciones-cusco' }
 };
 
-export default function AdopcionDepartmentPage({ params }) {
+export default function AdopcionDepartmentPage() {
+    const params = useParams();
     const { department } = params;
     const dept = DEPARTMENTS[department] || DEPARTMENTS.ayacucho; // por default Ayacucho
 

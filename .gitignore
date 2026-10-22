@@ -34,3 +34,7 @@ yarn-error.log*
 # vercel
 .vercel
 .yarn/
+# cloudflare
+.open-next
+.wrangler
+.dev.vars*

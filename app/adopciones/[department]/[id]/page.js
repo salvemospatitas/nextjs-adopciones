@@ -1,13 +1,14 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { notFound } from 'next/navigation';
+import { notFound, useParams } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Header from '../../../../components/Header';
 import LoadingSpinner from '../../../../components/LoadingSpinner';
 import PhotoGrid from '../../../../components/PhotoGrid';
 
-export default function DogDetailPage({ params }) {
+export default function DogDetailPage() {
+  const params = useParams();
   const { department, id } = params;
   const [dog, setDog] = useState(null);
   const [loading, setLoading] = useState(true);
